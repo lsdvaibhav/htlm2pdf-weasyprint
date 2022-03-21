@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>VAHAK Invoice</title>
+	</head>
+	<body>
+		<div class="invoice-box">
+			<table cellpadding="0" cellspacing="0">
+				<tr class="top">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td class="title">
+									<img src="logo.webp" style="width: 100%; max-width: 300px" />
+								</td>
+								<td>
+									<h4><strong>Epictus Solutions India Private Limited</strong></h4>
+									<small> 4th floor, IMG Tower, Thrive Co-working, 80ft Road, <br/>Kormangala, Bengaluru &#8211; KA (560095)<br />
+									Phone: 9981990700, Email: shahak@vahak.in, www.vahak.in </small><br/>
+									Date : {{date}}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="text-center">
+					<td><strong>Invoice for Transportation Payment</strong>
+						<br/>
+						Invoice -{{invoiceNumber}} (Payment referral)
+					</td>
+					<td></td>
+				</tr>
+
+				<tr class="information">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td>
+									<Strong>Load Provider</Strong><br />
+									{{providerName}}<br />
+									{{providerCode}}<br />
+									{{providerLocation}}
+								</td>
+
+								<td>
+									<strong>Lorry Onwer</strong><br />
+									{{ownerName}}<br />
+									{% if ownerGst != NAN %}
+									    {{ ownerGst }}
+									{% endif %}<br />
+									{{ownerLocation}}<br />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="heading">
+					<td>Product Details</td>
+					<td></td>
+				</tr>
+
+				<tr class="item">
+					<td>The deal has been accepted for</td>
+					<td>Rs.{{price}}/-</td>
+				</tr>
+				<tr class="item">
+					<td>Type of material</td>
+					<td>{{product}}</td>
+				</tr>
+				<tr class="item">
+					<td>Weight of material</td>
+
+					<td>{{quantity}} Tons</td>
+				</tr>
+
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+
+
+				<tr class="heading">
+					<td>Payment Details</td>
+					<td>Amount</td>
+				</tr>
+
+				<tr class="item">
+					<td>Amount paid by Load owner</td>
+					<td>{{amount1}}</td>
+				</tr>
+				<tr class="item">
+					<td>Amount received by Lorry owner</td>
+					<td>{{amount2}}</td>
+				</tr>
+				<tr class="item last">
+					<td>Discount by vahak</td>
+					<td>{{amount3}}</td>
+				</tr>
+
+				<tr class="">
+					<td></td>
+					<td>UTR from bank : <strong>{{utr}}</strong></td>
+				</tr>
+				<tr class="">
+					<td></td>
+					<td>Payment Type : <strong>{{paymentType}}</strong></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
